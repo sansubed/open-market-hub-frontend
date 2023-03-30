@@ -1,0 +1,99 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: auto;
+  gap: 1.5em;
+  padding: 0 2em;
+  font-size: 1.2em;
+  background-color: black;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.sectionHeader {
+  padding-top: 1em;
+  font-size: 1.5em;
+  padding-bottom: 1em;
+  color: #00c5c8;
+}
+
+.footerLink {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: white;
+  text-decoration: none;
+  padding-bottom: 1em;
+}
+.footerLink:hover {
+  color: #00c5c8;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+.row:hover {
+  color: #00c5c8;
+}
+
+.githubButton {
+  color: white;
+  background: black;
+  height: 32px;
+  width: 32px;
+  padding: 6px;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.youtubeButton {
+  background: #bb0000;
+  color: white;
+  height: 32px;
+  width: 32px;
+  padding: 6px;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.linkedinButton {
+  color: white;
+  background: #3b5998;
+  height: 32px;
+  width: 32px;
+  padding: 6px;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.footerButton {
+  border-radius: 25px;
+  color: white;
+  border: none;
+  margin: 0 1em;
+  padding: 0.5em 1.5em;
+  background: linear-gradient(270deg, #13adc7 0%, #945dd6 100%);
+  transition: 0.4s ease;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyright {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.footertotal {
+  background-color: black;
+}
