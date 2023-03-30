@@ -1,0 +1,30 @@
+# Name of the project
+name: open-market-hub-frontend
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: sudo apt install -y nodejs
+      - run: sudo apt install -y npm
+      - run: sudo npm install -g yarn
+      - run: yarn install
+      - run: yarn run build
+      - run: sudo cp -r /actions-runner/open-market-hub-frontend/open-market-hub-frontend/open-market-hub-frontend/out/* /var/www/open.markethub.com
