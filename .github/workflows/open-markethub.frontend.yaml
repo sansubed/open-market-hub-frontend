@@ -1,4 +1,4 @@
-name: openmarkethub-CI/CD
+name: openmarkethub frontend CI-CD
 
 on:
   push:
