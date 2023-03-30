@@ -27,4 +27,4 @@ jobs:
       - run: sudo npm install -g yarn
       - run: yarn install
       - run: yarn run build
-      - run: sudo cp -r /actions-runner/open-market-hub-frontend/open-market-hub-frontend/open-market-hub-frontend/out/* /var/www/open.markethub.com
+      - run: sudo cp -r /actions-runner/open-market-hub-frontend/open-market-hub-frontend/open-market-hub-frontend/out/* /var/www/openmarkethub.com/openmarkethub
