@@ -13,8 +13,8 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-      source: /actions-runner-openmarkethub/_work/open-market-hub-frontend/open-market-hub-frontend/dist/*
-      destination: /var/www/openmarkethub.com/openmarkethub
+        source: /actions-runner-openmarkethub/_work/open-market-hub-frontend/open-market-hub-frontend/dist/*
+        destination: /var/www/openmarkethub.com/openmarkethub
 
     steps:
       - uses: actions/checkout@v3
@@ -28,4 +28,4 @@ jobs:
       - run: sudo npm install -g yarn
       - run: yarn install
       - run: yarn run build
-      - run: sudo cp -r ${{source}} ${{destination}}
+      - run: sudo cp -r ${matrix.source}} ${{matrix.destination}}
