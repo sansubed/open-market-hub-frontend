@@ -1,5 +1,4 @@
-# Name of the project
-name: open-market-hub-frontend
+name: openmarkethub-CI/CD
 
 on:
   push:
@@ -14,6 +13,7 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
       - uses: actions/checkout@v3
@@ -27,4 +27,5 @@ jobs:
       - run: sudo npm install -g yarn
       - run: yarn install
       - run: yarn run build
-      - run: sudo cp -r /actions-runner/open-market-hub-frontend/open-market-hub-frontend/open-market-hub-frontend/out/* /var/www/openmarkethub.com/openmarkethub
+      - run: ls
+      - run: sudo cp -r /actions-runner-openmarkethub/_work/open-market-hub-frontend/open-market-hub-frontend/out/* /var/www/openmarkethub.com/openmarkethub
