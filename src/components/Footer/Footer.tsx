@@ -127,7 +127,7 @@ const Footer = () => {
         </div>
       </Box>
       <div className={styles.copyright}>
-        <small>Copyright &copy; Open Market Hub. All Rights Reserved</small>
+        <small>&copy;2023 Open Market Hub. All Rights Reserved</small>
       </div>
     </Box>
   );
