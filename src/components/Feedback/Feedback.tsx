@@ -6,15 +6,32 @@ const Feedback = () => {
     <Box
       sx={{
         display: "flex",
-        flexDirection: "column",
         alignItems: "center",
+        flexDirection: "column",
+        justifyContent: "center",
         gap: 2,
         py: 2,
+        background: "#A020F0",
+        height: "30vh",
+        clipPath: "polygon(0 24%, 100% 0, 100% 100%, 0% 100%)",
       }}
     >
-      <Typography>We would love to hear back from you!</Typography>
-      <Button variant="contained" size="large" color="success">
-        Give Feedback
+      <Typography variant="h4" color="#FFF">
+        We would love to hear back from you!
+      </Typography>
+      <Button
+        variant="contained"
+        sx={{
+          background: "linear-gradient(270deg, #13adc7 0%, #945dd6 100%)",
+          borderRadius: "15px",
+          height: "50px",
+          fontSize: "25px",
+          padding: 4,
+          textTransform: "capitalize",
+          mt: 2.5,
+        }}
+      >
+        Give Feedback!
       </Button>
     </Box>
   );

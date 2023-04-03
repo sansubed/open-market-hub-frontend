@@ -143,7 +143,7 @@ const Header = () => {
                   onClick={handleCloseNavMenu}
                   sx={{
                     my: 2,
-                    color: "white",
+                    color: "#FFF",
                     display: "flex",
                     justifyContent: "center",
                     mx: 2,
