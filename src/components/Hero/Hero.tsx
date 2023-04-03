@@ -60,7 +60,7 @@ const Hero = () => {
             </Button>
             <Button
               variant="outlined"
-              color="white"
+              color="info"
               size="large"
               sx={{
                 height: "70px",

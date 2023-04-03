@@ -37,18 +37,18 @@ const FeatureCard = ({ feature, description, icon }: FeatureCardInfo) => {
           <FontAwesomeIcon icon={icon} size="5x" />
         </Box>
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div" color="#FFF">
+          <Typography gutterBottom variant="h5" component="div" color="white">
             {feature}
           </Typography>
-          <Typography variant="body2" color="text.secondary" color="#FFF">
+          <Typography variant="body2" color="white">
             {description}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" color="white">
+          <Button size="small" color="info">
             Share
           </Button>
-          <Button size="small" color="white">
+          <Button size="small" color="info">
             Learn More
           </Button>
         </CardActions>
