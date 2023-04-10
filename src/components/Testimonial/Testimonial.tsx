@@ -1,7 +1,11 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import FeatureCard from "../FeatureCard/FeatureCard";
-import { faBeer } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBeer,
+  faDatabase,
+  faLaptopCode,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Testimonial = () => {
   return (
@@ -31,12 +35,12 @@ const Testimonial = () => {
       >
         <FeatureCard
           feature="Better user experience"
-          icon={faBeer}
+          icon={faLaptopCode}
           description="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctic"
         />
         <FeatureCard
           feature="Scalability"
-          icon={faBeer}
+          icon={faDatabase}
           description="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctic"
         />
       </Box>

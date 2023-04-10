@@ -20,15 +20,10 @@ import {
   faCircleInfo,
 } from "@fortawesome/free-solid-svg-icons";
 
-const pages = ["Home", "Marketplace", "Contact", "About"];
+const pages = ["Home", "Marketplace", "Contact"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const pagesLogos: IconDefinition[] = [
-  faHouse,
-  faStore,
-  faEnvelope,
-  faCircleInfo,
-];
+const pagesLogos: IconDefinition[] = [faHouse, faStore, faEnvelope];
 const pagesRoutes = ["/home", "/marketplace", "/contact", "/about"];
 
 //header components

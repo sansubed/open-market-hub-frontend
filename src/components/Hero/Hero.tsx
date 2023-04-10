@@ -1,4 +1,4 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography, useMediaQuery } from "@mui/material";
 import heroImage from "../../assets/hero.jpg";
 
 const Hero = () => {
@@ -8,8 +8,8 @@ const Hero = () => {
         height: "80vh",
         background: `linear-gradient(rgba(160, 32, 240, 0.2),rgba(160, 32, 240, 0.2)), url(${heroImage})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundSize: { xs: "left", lg: "cover" },
+        backgroundPosition: "left",
       }}
       style={{
         clipPath: "polygon(0 0, 100% 0%, 100% 90%, 0% 100%)",
