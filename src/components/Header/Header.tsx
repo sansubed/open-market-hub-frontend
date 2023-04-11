@@ -17,37 +17,24 @@ import {
   faHouse,
   faStore,
   faEnvelope,
-  faCircleInfo,
 } from "@fortawesome/free-solid-svg-icons";
 
 const pages = ["Home", "Marketplace", "Contact"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
 const pagesLogos: IconDefinition[] = [faHouse, faStore, faEnvelope];
-const pagesRoutes = ["/home", "/marketplace", "/contact", "/about"];
+const pagesRoutes = ["/home", "/marketplace", "/contact"];
 
 //header components
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null
-  );
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -101,9 +88,22 @@ const Header = () => {
                   display: { xs: "block", md: "none" },
                 }}
               >
-                {pages.map((page) => (
+                {pages.map((page, index) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                    <Typography textAlign="center">
+                      <Button
+                        key={page}
+                        href={pagesRoutes[index]}
+                        onClick={handleCloseNavMenu}
+                        sx={{
+                          color: "inherit",
+                          display: "flex",
+                          justifyContent: "center",
+                        }}
+                      >
+                        {page}
+                      </Button>
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -152,35 +152,7 @@ const Header = () => {
               ))}
             </Box>
 
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: "45px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
+            <Box sx={{ flexGrow: 0 }}></Box>
           </Toolbar>
         </Container>
       </AppBar>

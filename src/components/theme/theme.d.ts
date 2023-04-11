@@ -1,11 +1,13 @@
-// //Applying module augmentation to override MUI theme in TS
 declare module "@mui/material/styles" {
+  interface Theme {
+    status: {
+      danger: string;
+    };
+  }
+  // allow configuration using `createTheme`
   interface ThemeOptions {
-    custom: {
-      light: string;
-      main: string;
-      dark: string;
-      contrastText: string;
+    status?: {
+      danger?: string;
     };
   }
 }
