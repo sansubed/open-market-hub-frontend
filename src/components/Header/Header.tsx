@@ -17,11 +17,12 @@ import {
   faHouse,
   faStore,
   faEnvelope,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
-const pages = ["Home", "Marketplace", "Contact"];
-const pagesLogos: IconDefinition[] = [faHouse, faStore, faEnvelope];
-const pagesRoutes = ["/home", "/marketplace", "/contact"];
+const pages = ["Home", "Marketplace", "Contact", "Login"];
+const pagesLogos: IconDefinition[] = [faHouse, faStore, faEnvelope, faUser];
+const pagesRoutes = ["/home", "/marketplace", "/contact", "/login"];
 
 //header components
 const Header = () => {
@@ -38,8 +39,18 @@ const Header = () => {
   };
 
   return (
-    <Box>
-      <AppBar position="static" color="primary">
+    <Box
+      sx={{
+        my: "65px",
+      }}
+    >
+      <AppBar
+        position="fixed"
+        sx={{
+          backgroundColor: "#7f5a83",
+          background: "linear-gradient(315deg, #7f5a83 0%, #0d324d 74%)",
+        }}
+      >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography

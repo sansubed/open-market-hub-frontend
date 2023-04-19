@@ -4,97 +4,129 @@ import {
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Box, Typography } from "@mui/material";
-import React from "react";
+import { Box, Stack, Typography } from "@mui/material";
+import styled from "styled-components";
 
 const ValueSection = () => {
+  const StyledBox = styled(Box)`
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 20px;
+  `;
+
   return (
     <Box
       sx={{
-        display: "flex",
-        justifyContent: "space-evenly",
-        flexWrap: "wrap",
-        alignItems: "center",
-        m: 5,
-        py: 3,
-        minHeight: "30vh",
+        background: "linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%)",
+        py: 5,
+        px: 2,
       }}
     >
-      <Box sx={{}}>
-        <Typography variant="h3" mb={3}>
-          Our Values
-        </Typography>
-        <Typography variant="h5">
-          We Celebrate All The Students <br /> And Their Journey.
-        </Typography>
-        <br />
-        <Typography variant="h5">
-          We Are Proud To Make <br /> Student's Life Easier
-        </Typography>
-      </Box>
-
       <Box
         sx={{
           display: "flex",
-          flexWrap: "wrap",
+          flexDirection: "column",
           justifyContent: "center",
-          gap: 4,
-          py: 3,
+          alignItems: "center",
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            p: 3,
-            backgroundColor: " #9921e8",
-            background: "linear-gradient(315deg, #9921e8 0%, #5f72be 74%)",
-            borderRadius: "20px",
-            color: "white",
-          }}
-        >
-          <FontAwesomeIcon icon={faUsers} size="5x" />
-          <Typography variant="h5" mt={3}>
-            Bringing Community Closer
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            backgroundColor: " #9921e8",
-            background: "linear-gradient(315deg, #9921e8 0%, #5f72be 74%)",
-            borderRadius: "20px",
-            color: "white",
-            p: 3,
-          }}
-        >
-          <FontAwesomeIcon icon={faFaceSmile} size="5x" />
-          <Typography variant="h5" mt={3}>
-            Guaranteed top notch User{" "}
-          </Typography>
-          <Typography variant="h5">Experience</Typography>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            border: "2px solid green",
-            p: 3,
-            backgroundColor: " #9921e8",
-            background: "linear-gradient(315deg, #9921e8 0%, #5f72be 74%)",
-            borderRadius: "20px",
-            color: "white",
-          }}
-        >
-          <FontAwesomeIcon icon={faShieldHalved} size="5x" />
-          <Typography variant="h5" mt={3}>
-            Ensuring topmost security
-          </Typography>
-        </Box>
+        <Typography variant="h3" mb={2} color="secondary">
+          Our Values
+        </Typography>
+        <Typography variant="h4">
+          We Celebrate All The Students And Their Journey.
+        </Typography>
+        <br />
       </Box>
+      <StyledBox>
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-evenly",
+            gap: 7,
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "50%",
+              height: "350px",
+              width: "350px",
+              background:
+                "linear-gradient(135deg, rgb(79, 58, 101) 0%, rgb(39, 116, 174) 100%)",
+              color: "#FFF",
+            }}
+          >
+            <FontAwesomeIcon icon={faUsers} size="10x" color="#FFF" />
+            <Typography
+              variant="h6"
+              sx={{ marginTop: "20px", fontWeight: "bold" }}
+              align="center"
+              maxWidth="300px"
+            >
+              Bringing Community Closer
+            </Typography>
+          </Box>
+
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-evenly",
+              alignItems: "center",
+              borderRadius: "50%",
+              height: "350px",
+              width: "350px",
+              background:
+                "linear-gradient(135deg, rgb(79, 58, 101) 0%, rgb(39, 116, 174) 100%)",
+              color: "#FFF",
+            }}
+          >
+            <FontAwesomeIcon icon={faFaceSmile} size="10x" />
+            <Typography
+              variant="h6"
+              sx={{ marginTop: "20px", fontWeight: "bold" }}
+              align="center"
+              maxWidth="300px"
+            >
+              Guaranteed Top Notch User Experience
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "50%",
+              height: "350px",
+              width: "350px",
+              background:
+                "linear-gradient(135deg, rgb(79, 58, 101) 0%, rgb(39, 116, 174) 100%)",
+              color: "#FFF",
+            }}
+          >
+            <FontAwesomeIcon icon={faShieldHalved} size="10x" />
+            <Typography
+              variant="h6"
+              sx={{ fontWeight: "bold", marginTop: "20px" }}
+            >
+              Ensuring Topmost Security
+            </Typography>
+          </Box>
+        </Box>
+      </StyledBox>
+      <Typography variant="h3" pb={5} align="center" color="#272525">
+        We Are Proud To Make Student's Life Easier
+      </Typography>
     </Box>
   );
 };

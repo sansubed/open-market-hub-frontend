@@ -6,19 +6,21 @@ import {
   faDatabase,
   faLaptopCode,
 } from "@fortawesome/free-solid-svg-icons";
+import CustomGradientCard from "../GradientCard/GradientCard";
 
 const Testimonial = () => {
   return (
     <Box
       sx={{
         py: 5,
-        my: 5,
+        px: 2,
         backgroundColor: " #A020F0",
         color: "#FFF",
         display: "flex",
         justifyContent: "space-evenly",
         alignItems: "center",
         flexWrap: "wrap",
+        background: "linear-gradient(315deg, #7f5a83 0%, #0d324d 74%)",
       }}
     >
       <Box>
@@ -33,15 +35,27 @@ const Testimonial = () => {
           flexWrap: "wrap",
         }}
       >
-        <FeatureCard
+        <CustomGradientCard
+          color="#000"
+          sx={{
+            backgroundColor: "#A9C9FF",
+            backgroundImage:
+              "linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%)",
+          }}
           feature="Better user experience"
           icon={faLaptopCode}
-          description="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctic"
+          description=" Designing digital products and services that are user-centered and provide users with positive emotions, high satisfaction, and ease of use."
         />
-        <FeatureCard
+        <CustomGradientCard
+          sx={{
+            backgroundColor: "#A9C9FF",
+            backgroundImage:
+              "linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%)",
+          }}
+          color="#000"
           feature="Scalability"
           icon={faDatabase}
-          description="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctic"
+          description="Handle increasing amounts of work, growth, and traffic without sacrificing performance or functionality"
         />
       </Box>
     </Box>

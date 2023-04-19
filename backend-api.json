@@ -1,0 +1,15 @@
+[
+{
+    "name": "laptop",
+    "description":"Macbook pro",
+    "price": 1000.00,
+    "imageUrl": "laptopUrl"
+},
+{
+    "name": "laptop",
+    "description":"Macbook pro",
+    "price": 1000.00,
+    "imageUrl": "laptopUrl"
+}
+
+]

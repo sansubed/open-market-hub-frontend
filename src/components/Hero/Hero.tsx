@@ -1,5 +1,6 @@
 import { Box, Button, Stack, Typography, useMediaQuery } from "@mui/material";
 import heroImage from "../../assets/hero.jpg";
+import AnimatedText from "../AnimatedText/AnimatedText";
 
 const Hero = () => {
   return (
@@ -10,9 +11,6 @@ const Hero = () => {
         backgroundRepeat: "no-repeat",
         backgroundSize: { xs: "left", lg: "cover" },
         backgroundPosition: "left",
-      }}
-      style={{
-        clipPath: "polygon(0 0, 100% 0%, 100% 90%, 0% 100%)",
       }}
     >
       <Box
@@ -31,44 +29,50 @@ const Hero = () => {
             margin: "10%",
           }}
         >
-          <Typography variant="h2" component="h2" color="#FFF">
-            Open Market Hub
-          </Typography>
+          <AnimatedText color="white" text="Open Market Hub" variant="h2" />
           <Typography
             variant="h5"
-            color="#00ffea"
+            color="#d7d2d2"
             sx={{ maxWidth: "550px", marginY: 4 }}
           >
             Welcome to the Smart, Safe and Best Responsive Way to Buy and Sell
             Products Locally!
           </Typography>
 
-          <Stack direction="row" gap={2}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+            }}
+            gap={2}
+          >
             <Button
+              href="/marketplace"
               variant="contained"
               color="warning"
               sx={{
-                height: "3em",
                 borderRadius: "20px",
-                fontSize: "1em",
-                padding: 2,
+                fontSize: "1.5em",
+                px: 3,
+                py: 1.5,
+              }}
+            >
+              Market Place
+            </Button>
+            <Button
+              href="/create-new-account"
+              variant="contained"
+              color="inherit"
+              sx={{
+                borderRadius: "20px",
+                fontSize: "1.5em",
+                px: 3,
+                py: 1.5,
               }}
             >
               Get Started
             </Button>
-            <Button
-              variant="outlined"
-              color="info"
-              sx={{
-                height: "3em",
-                borderRadius: "20px",
-                fontSize: "1em",
-                padding: 2,
-              }}
-            >
-              Learn More
-            </Button>
-          </Stack>
+          </Box>
         </Box>
       </Box>
     </Box>

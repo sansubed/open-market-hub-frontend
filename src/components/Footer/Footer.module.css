@@ -8,7 +8,6 @@
   gap: 1.5em;
   padding: 0 2em;
   font-size: 1.2em;
-  background-color: black;
 }
 
 .section {
@@ -95,5 +94,6 @@
 }
 
 .footertotal {
-  background-color: black;
+  backgroundcolor: #7f5a83;
+  background: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
 }

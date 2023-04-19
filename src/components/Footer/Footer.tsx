@@ -3,9 +3,9 @@ import styles from "./Footer.module.css";
 import CallIcon from "@mui/icons-material/Call";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { SiSpring, SiMicrosoftazure, SiTerraform } from "react-icons/si";
+import { SiSpring } from "react-icons/si";
 import { DiDotnet } from "react-icons/di";
-import { FaReact, FaAngular, FaAws, FaJenkins } from "react-icons/fa";
+import { FaReact, FaAws } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,

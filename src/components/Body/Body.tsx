@@ -10,45 +10,53 @@ import {
   faMicrochip,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
+import CustomGradientCard from "../GradientCard/GradientCard";
 
 const Body = () => {
   return (
-    <Box>
+    <Box sx={{ background: "#FFF" }}>
       <Hero />
       <Box
         sx={{
           py: 3,
           display: "flex",
           justifyContent: "center",
+          background: "#FFF",
         }}
       >
-        <Typography variant="h2">Our features</Typography>
+        <Typography variant="h2" color="secondary">
+          Our features
+        </Typography>
       </Box>
 
       <Box
         sx={{
           py: 3,
-          maxWidth: "1300px",
-          margin: "auto",
+          margin: { xs: 2, sm: "auto" },
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "space-evenly",
+          gap: 3,
+          background: "#FFF",
         }}
       >
-        <FeatureCard
+        <CustomGradientCard
+          color="#ebe8e8"
           feature="Higher Security"
           icon={faLock}
-          description="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctic"
+          description="Implementation of measures and protocols to reduce the risk of unauthorized access, data breaches, and other security threats."
         />
-        <FeatureCard
-          feature="Better user experience"
+        <CustomGradientCard
+          color="#ebe8e8"
+          feature="Responsive Design"
           icon={faUsers}
-          description="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctic"
+          description="Designing digital products and services that are intuitive, easy-to-use, and engaging, providing users with a seamless and enjoyable experience."
         />
-        <FeatureCard
+        <CustomGradientCard
+          color="#ebe8e8"
           feature="Scalability"
           icon={faMicrochip}
-          description="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctic"
+          description="Handle increased workloads, traffic, and growth while maintaining performance and availability without needing major architectural changes."
         />
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", my: 5 }}>
@@ -68,6 +76,7 @@ const Body = () => {
           Explore all features
         </Button>
       </Box>
+
       <Testimonial />
       <ValueSection />
       <Feedback />

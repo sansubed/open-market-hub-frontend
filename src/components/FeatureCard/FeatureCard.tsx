@@ -9,6 +9,7 @@ import { Box } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition, faLock } from "@fortawesome/free-solid-svg-icons";
 import { icon } from "@fortawesome/fontawesome-svg-core";
+import CustomGradientCard from "../GradientCard/GradientCard";
 
 interface FeatureCardInfo {
   feature: string;
@@ -18,7 +19,7 @@ interface FeatureCardInfo {
 
 const FeatureCard = ({ feature, description, icon }: FeatureCardInfo) => {
   return (
-    <div>
+    <Box>
       <Card
         sx={{
           maxWidth: 345,
@@ -56,7 +57,7 @@ const FeatureCard = ({ feature, description, icon }: FeatureCardInfo) => {
           </Button>
         </CardActions>
       </Card>
-    </div>
+    </Box>
   );
 };
 

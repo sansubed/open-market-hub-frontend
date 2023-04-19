@@ -6,12 +6,12 @@ const Marketplace = () => {
   return (
     <Box
       sx={{
-        my: 5,
+        py: 5,
         mx: "10%",
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "center",
-        gap: 2,
+        gap: 5,
       }}
     >
       <ProductCard />
