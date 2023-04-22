@@ -7,7 +7,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Chip, Divider } from "@mui/material";
+import { Chip, Divider, PaperProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Description } from "@mui/icons-material";
 
@@ -18,16 +18,19 @@ interface ProductCardProps {
   imageUrl: string;
 }
 
-const AnimatedCard = styled(Card)(({ theme, isHovered }) => ({
+type MyPaperProps = Omit<PaperProps, "classes"> & {
+  isHovered: boolean;
+};
+
+const AnimatedCard = styled(Card)(({ isHovered }: MyPaperProps) => ({
   maxWidth: 300,
   borderRadius: 7,
   background: "#0d324d",
   transition: "transform 0.3s",
   transform: isHovered ? "scale(1.05)" : "scale(1)",
-  boxShadow: isHovered ? theme.shadows[10] : theme.shadows[4],
+
   "&:hover": {
     transform: "scale(1.05)",
-    boxShadow: theme.shadows[10],
   },
 }));
 

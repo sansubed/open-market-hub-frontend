@@ -86,7 +86,7 @@ const CreateNewAccount: React.FC<Props> = ({ style }) => {
   };
 
   return (
-    <Box style={style} {...styles.root}>
+    <div style={style} {...styles.root}>
       <Typography variant="h4" gutterBottom>
         Create a New Account
       </Typography>
@@ -229,7 +229,7 @@ const CreateNewAccount: React.FC<Props> = ({ style }) => {
           Create Account
         </Button>
       </form>
-    </Box>
+    </div>
   );
 };
 
