@@ -4,7 +4,6 @@ import {
   TextField,
   Button,
   FormControl,
-  OutlinedInput,
   InputAdornment,
   IconButton,
   Box,
@@ -14,15 +13,19 @@ import {
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  //use navigate to navigate to new page
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log(email, password);
+    navigate("/marketplace");
   };
 
   const handleClickShowPassword = () => {
@@ -79,7 +82,7 @@ const Login = () => {
               },
               startAdornment: (
                 <InputAdornment position="start">
-                  <FontAwesomeIcon icon={faUser} color="#FFF" size="2x" />
+                  <FontAwesomeIcon icon={faUser} color="#FFF" size="1x" />
                 </InputAdornment>
               ),
             }}
@@ -117,7 +120,7 @@ const Login = () => {
               },
               startAdornment: (
                 <InputAdornment position="start">
-                  <FontAwesomeIcon icon={faLock} color="#FFF" size="2x" />
+                  <FontAwesomeIcon icon={faLock} color="#FFF" size="1x" />
                 </InputAdornment>
               ),
             }}

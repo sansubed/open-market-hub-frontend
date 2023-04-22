@@ -4,7 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BoxProps } from "@mui/material/Box";
 
@@ -64,8 +64,8 @@ const CustomGradientCard: React.FC<FeatureCardInfo> = ({
             justifyContent: "center",
             flexDirection: "column",
             pt: 3,
-            maxWidth: 345,
-            m: 2,
+            maxWidth: 300,
+            m: 1,
           }}
         >
           <FontAwesomeIcon icon={icon} size="7x" color={color} />
@@ -75,6 +75,19 @@ const CustomGradientCard: React.FC<FeatureCardInfo> = ({
           <Typography variant="body1" color={color}>
             {description}
           </Typography>
+          <Button
+            size="small"
+            variant="contained"
+            color="primary"
+            fullWidth
+            sx={{
+              alignSelf: "center",
+              mt: 3,
+            }}
+            href="marketplace"
+          >
+            Learn More
+          </Button>
         </Box>
       </AnimatedCardContent>
     </GradientCard>

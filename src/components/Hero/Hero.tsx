@@ -9,7 +9,7 @@ const Hero = () => {
         height: "80vh",
         background: `linear-gradient(rgba(160, 32, 240, 0.2),rgba(160, 32, 240, 0.2)), url(${heroImage})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize: { xs: "left", lg: "cover" },
+        backgroundSize: { md: "left", lg: "cover" },
         backgroundPosition: "left",
       }}
     >
@@ -20,22 +20,26 @@ const Hero = () => {
           justifyContent: "center",
           flexWrap: "wrap",
           gap: "2em",
-          alignItems: "flex-end",
+          alignItems: { md: "center", lg: "flex-end" },
           height: "100%",
         }}
       >
         <Box
           sx={{
-            margin: "10%",
+            margin: "2%",
+            display: "flex",
+            justifyContent: "flex-end",
+            flexDirection: "column",
+            alignItems: { sm: "center", lg: "flex-end" },
           }}
         >
-          <AnimatedText color="white" text="Open Market Hub" variant="h2" />
+          <AnimatedText color="white" text="Open Market Hub" variant="h3" />
           <Typography
-            variant="h5"
+            variant="h6"
             color="#d7d2d2"
-            sx={{ maxWidth: "550px", marginY: 4 }}
+            sx={{ maxWidth: "450px", marginY: 4, pl: { lg: 10 } }}
           >
-            Welcome to the Smart, Safe and Best Responsive Way to Buy and Sell
+            Welcome to the Smart, Safe and Responsive Way to Buy and Sell
             Products Locally!
           </Typography>
 
@@ -52,9 +56,9 @@ const Hero = () => {
               color="warning"
               sx={{
                 borderRadius: "20px",
-                fontSize: "1.5em",
-                px: 3,
-                py: 1.5,
+                fontSize: "1.2em",
+                px: 2,
+                py: 1,
               }}
             >
               Market Place
@@ -65,9 +69,9 @@ const Hero = () => {
               color="inherit"
               sx={{
                 borderRadius: "20px",
-                fontSize: "1.5em",
-                px: 3,
-                py: 1.5,
+                fontSize: "1.2em",
+                px: 2,
+                py: 1,
               }}
             >
               Get Started

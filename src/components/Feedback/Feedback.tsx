@@ -1,21 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
+  Alert,
   Box,
   Button,
+  IconButton,
   InputAdornment,
+  Snackbar,
   TextField,
   Typography,
 } from "@mui/material";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faUser } from "@fortawesome/free-solid-svg-icons";
+import CloseIcon from "@mui/icons-material/Close";
+import MuiAlert, { AlertProps } from "@mui/material/Alert";
 
 const GradientBox = styled(Box)`
   background: linear-gradient(135deg, #4f3a65 0%, #2774ae 100%);
 `;
 
 const FeedbackSection = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (
+    event: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+    props,
+    ref
+  ) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+
   return (
     <GradientBox
       sx={{
@@ -139,13 +168,28 @@ const FeedbackSection = () => {
             color="secondary"
             size="large"
             sx={{
-              p: 3,
-              fontSize: "1.5em",
+              p: 2,
+              fontSize: "1.3em",
               borderRadius: "20px",
             }}
+            onClick={handleClick}
           >
             Submit Feedback
           </Button>
+          <Snackbar
+            open={open}
+            autoHideDuration={6000}
+            onClose={handleClose}
+            anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+          >
+            <Alert
+              onClose={handleClose}
+              severity="success"
+              sx={{ width: "100%" }}
+            >
+              Thank you for your feedback!
+            </Alert>
+          </Snackbar>
         </Box>
       </motion.div>
     </GradientBox>

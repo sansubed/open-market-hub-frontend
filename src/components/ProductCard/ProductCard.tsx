@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Box } from "@mui/system";
 import * as React from "react";
 import Card from "@mui/material/Card";
@@ -7,38 +8,76 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Chip, Divider } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { Description } from "@mui/icons-material";
 
-const ProductCard = () => {
+interface ProductCardProps {
+  title: string;
+  description: string;
+  price: string;
+  imageUrl: string;
+}
+
+const AnimatedCard = styled(Card)(({ theme, isHovered }) => ({
+  maxWidth: 300,
+  borderRadius: 7,
+  background: "#0d324d",
+  transition: "transform 0.3s",
+  transform: isHovered ? "scale(1.05)" : "scale(1)",
+  boxShadow: isHovered ? theme.shadows[10] : theme.shadows[4],
+  "&:hover": {
+    transform: "scale(1.05)",
+    boxShadow: theme.shadows[10],
+  },
+}));
+
+const ProductCard: React.FC<ProductCardProps> = ({
+  title,
+  description,
+  price,
+  imageUrl,
+}) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <Box>
-      <Card sx={{ maxWidth: 345, borderRadius: 7, background: "#F2F2F2" }}>
-        <CardMedia
-          sx={{ height: 140 }}
-          image="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-          title="green iguana"
-        />
-        <CardContent sx={{ p: 2 }}>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
+      <AnimatedCard
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        isHovered={isHovered}
+      >
+        <CardMedia sx={{ height: 150 }} image={imageUrl} title="green iguana" />
+        <CardContent sx={{ p: 1.5 }}>
+          <Typography gutterBottom variant="h5" component="div" color="#FFF">
+            {title}
           </Typography>
-          <Typography variant="body2" color="text.secondary" py={2}>
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          <Typography variant="body2" color="#cfc4c4" py={1}>
+            {description}
           </Typography>
 
-          <Typography variant="h5" color="primary">
-            $250
+          <Typography variant="h5" color="#FFF">
+            {price}
           </Typography>
         </CardContent>
 
         <Divider component="div" role="presentation"></Divider>
         <CardActions sx={{ p: 2 }}>
-          <Button variant="contained" color="info">
+          <Button variant="contained" color="success" size="small">
             Buy now
           </Button>
-          <Button>Learn More</Button>
+          <Button variant="outlined" size="small" color="warning">
+            View Details
+          </Button>
         </CardActions>
-      </Card>
+      </AnimatedCard>
     </Box>
   );
 };

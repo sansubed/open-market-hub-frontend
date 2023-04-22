@@ -33,7 +33,7 @@ const FeatureCard = ({ feature, description, icon }: FeatureCardInfo) => {
           sx={{
             display: "flex",
             justifyContent: "center",
-            pt: 3,
+            pt: 1,
           }}
         >
           <FontAwesomeIcon icon={icon} size="7x" color="#3d3d3d" />
@@ -52,7 +52,7 @@ const FeatureCard = ({ feature, description, icon }: FeatureCardInfo) => {
           <Button size="small" color="secondary">
             Share
           </Button>
-          <Button size="small" color="secondary">
+          <Button size="small" color="secondary" href="/marketplace">
             Learn More
           </Button>
         </CardActions>

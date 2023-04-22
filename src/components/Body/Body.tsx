@@ -24,7 +24,7 @@ const Body = () => {
           background: "#FFF",
         }}
       >
-        <Typography variant="h2" color="secondary">
+        <Typography variant="h3" color="secondary">
           Our features
         </Typography>
       </Box>
@@ -35,8 +35,8 @@ const Body = () => {
           margin: { xs: 2, sm: "auto" },
           display: "flex",
           flexWrap: "wrap",
-          justifyContent: "space-evenly",
-          gap: 3,
+          justifyContent: "center",
+          gap: 10,
           background: "#FFF",
         }}
       >

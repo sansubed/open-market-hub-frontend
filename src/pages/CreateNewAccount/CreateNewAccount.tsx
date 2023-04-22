@@ -1,20 +1,57 @@
-import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+import { createUserWithEmailAndPassword } from "@firebase/auth";
+import {
+  faEnvelope,
+  faLock,
+  faUser,
+  faUserSecret,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  Alert,
   Box,
   Button,
   InputAdornment,
+  Paper,
   Stack,
   TextField,
   Typography,
 } from "@mui/material";
-import { CSSProperties } from "react";
+import { CSSProperties, useState } from "react";
+import { auth } from "../../firebase/firebase";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   style?: CSSProperties;
 }
 
 const CreateNewAccount: React.FC<Props> = ({ style }) => {
+  //navigate into another page;
+  const navigate = useNavigate();
+
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  //function to handle submit
+  const handleSubmit = async (e: any) => {
+    const userInfo = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password,
+    };
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      console.log(email, password);
+    } catch (err) {
+      <Alert severity="error">
+        User Email already Exist. Please use new one
+      </Alert>;
+      console.log(err);
+    }
+    navigate("/login");
+  };
   const styles = {
     root: {
       display: "flex",
@@ -49,7 +86,7 @@ const CreateNewAccount: React.FC<Props> = ({ style }) => {
   };
 
   return (
-    <div style={style} {...styles.root}>
+    <Box style={style} {...styles.root}>
       <Typography variant="h4" gutterBottom>
         Create a New Account
       </Typography>
@@ -69,7 +106,10 @@ const CreateNewAccount: React.FC<Props> = ({ style }) => {
         >
           <TextField
             placeholder="First Name"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
             variant="outlined"
+            name="firstName"
             style={styles.textField}
             required
             fullWidth
@@ -87,15 +127,18 @@ const CreateNewAccount: React.FC<Props> = ({ style }) => {
               },
               startAdornment: (
                 <InputAdornment position="start">
-                  <FontAwesomeIcon icon={faUser} color="#FFF" size="2x" />
+                  <FontAwesomeIcon icon={faUser} color="#FFF" size="1x" />
                 </InputAdornment>
               ),
             }}
           />
           <TextField
             placeholder="Last Name"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
             variant="outlined"
             style={styles.textField}
+            name="lastName"
             required
             fullWidth
             InputLabelProps={{
@@ -112,7 +155,7 @@ const CreateNewAccount: React.FC<Props> = ({ style }) => {
               },
               startAdornment: (
                 <InputAdornment position="start">
-                  <FontAwesomeIcon icon={faUser} color="#FFF" size="2x" />
+                  <FontAwesomeIcon icon={faUserSecret} color="#FFF" size="1x" />
                 </InputAdornment>
               ),
             }}
@@ -122,6 +165,9 @@ const CreateNewAccount: React.FC<Props> = ({ style }) => {
         <TextField
           fullWidth
           placeholder="Email Address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          name="email"
           variant="outlined"
           style={styles.textField}
           type="email"
@@ -140,7 +186,7 @@ const CreateNewAccount: React.FC<Props> = ({ style }) => {
             },
             startAdornment: (
               <InputAdornment position="start">
-                <FontAwesomeIcon icon={faEnvelope} color="#FFF" size="2x" />
+                <FontAwesomeIcon icon={faEnvelope} color="#FFF" size="1x" />
               </InputAdornment>
             ),
           }}
@@ -148,6 +194,9 @@ const CreateNewAccount: React.FC<Props> = ({ style }) => {
         <TextField
           fullWidth
           placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          name="password"
           variant="outlined"
           style={styles.textField}
           type="password"
@@ -166,16 +215,21 @@ const CreateNewAccount: React.FC<Props> = ({ style }) => {
             },
             startAdornment: (
               <InputAdornment position="start">
-                <FontAwesomeIcon icon={faLock} color="#FFF" size="2x" />
+                <FontAwesomeIcon icon={faLock} color="#FFF" size="1x" />
               </InputAdornment>
             ),
           }}
         />
-        <Button variant="contained" color="primary" style={styles.button}>
+        <Button
+          variant="contained"
+          color="primary"
+          style={styles.button}
+          onClick={handleSubmit}
+        >
           Create Account
         </Button>
       </form>
-    </div>
+    </Box>
   );
 };
 

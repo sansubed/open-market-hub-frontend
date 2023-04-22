@@ -37,7 +37,7 @@ const ValueSection = () => {
         <Typography variant="h3" mb={2} color="secondary">
           Our Values
         </Typography>
-        <Typography variant="h4">
+        <Typography variant="h5">
           We Celebrate All The Students And Their Journey.
         </Typography>
         <br />
@@ -58,16 +58,16 @@ const ValueSection = () => {
               justifyContent: "center",
               alignItems: "center",
               borderRadius: "50%",
-              height: "350px",
-              width: "350px",
+              height: "300px",
+              width: "300px",
               background:
                 "linear-gradient(135deg, rgb(79, 58, 101) 0%, rgb(39, 116, 174) 100%)",
               color: "#FFF",
             }}
           >
-            <FontAwesomeIcon icon={faUsers} size="10x" color="#FFF" />
+            <FontAwesomeIcon icon={faUsers} size="7x" color="#FFF" />
             <Typography
-              variant="h6"
+              variant="body1"
               sx={{ marginTop: "20px", fontWeight: "bold" }}
               align="center"
               maxWidth="300px"
@@ -83,16 +83,16 @@ const ValueSection = () => {
               justifyContent: "space-evenly",
               alignItems: "center",
               borderRadius: "50%",
-              height: "350px",
-              width: "350px",
+              height: "300px",
+              width: "300px",
               background:
                 "linear-gradient(135deg, rgb(79, 58, 101) 0%, rgb(39, 116, 174) 100%)",
               color: "#FFF",
             }}
           >
-            <FontAwesomeIcon icon={faFaceSmile} size="10x" />
+            <FontAwesomeIcon icon={faFaceSmile} size="7x" />
             <Typography
-              variant="h6"
+              variant="body1"
               sx={{ marginTop: "20px", fontWeight: "bold" }}
               align="center"
               maxWidth="300px"
@@ -107,16 +107,16 @@ const ValueSection = () => {
               justifyContent: "center",
               alignItems: "center",
               borderRadius: "50%",
-              height: "350px",
-              width: "350px",
+              height: "300px",
+              width: "300px",
               background:
                 "linear-gradient(135deg, rgb(79, 58, 101) 0%, rgb(39, 116, 174) 100%)",
               color: "#FFF",
             }}
           >
-            <FontAwesomeIcon icon={faShieldHalved} size="10x" />
+            <FontAwesomeIcon icon={faShieldHalved} size="7x" />
             <Typography
-              variant="h6"
+              variant="body1"
               sx={{ fontWeight: "bold", marginTop: "20px" }}
             >
               Ensuring Topmost Security
@@ -124,7 +124,7 @@ const ValueSection = () => {
           </Box>
         </Box>
       </StyledBox>
-      <Typography variant="h3" pb={5} align="center" color="#272525">
+      <Typography variant="h5" pb={5} align="center" color="#272525">
         We Are Proud To Make Student's Life Easier
       </Typography>
     </Box>
