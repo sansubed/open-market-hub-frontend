@@ -14,7 +14,7 @@ import { Description } from "@mui/icons-material";
 interface ProductCardProps {
   title: string;
   description: string;
-  price: string;
+  price: number;
   imageUrl: string;
 }
 

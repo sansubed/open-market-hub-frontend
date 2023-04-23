@@ -4,27 +4,28 @@ import { Box } from "@mui/system";
 import { InputAdornment, TextField } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faSearch } from "@fortawesome/free-solid-svg-icons";
+import productsList from "../../seeding/products";
 
 interface Product {
   name: string;
-  price: string;
+  price: number;
   description: string;
   imageUrl: string;
 }
 
 const Marketplace = () => {
-  const [productList, setProductList] = useState([]);
+  const [productList, setProductList] = useState(productsList);
   const [searchInput, setSearchInput] = useState<string>("");
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      let response = await fetch("http://103.72.77.61:8080/api/products/");
-      let productList = await response.json();
-      setProductList(productList);
-    };
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     let response = await fetch("http://103.72.77.61:8080/api/products/");
+  //     let productList = await response.json();
+  //     setProductList(productList);
+  //   };
 
-    fetchProducts();
-  }, []);
+  //   fetchProducts();
+  // }, []);
 
   return (
     <Box
@@ -74,17 +75,34 @@ const Marketplace = () => {
           gap: 5,
         }}
       >
-        {productList
-          .filter((product: Product) => product?.name?.includes(searchInput))
-          .map((product: Product, index) => (
-            <ProductCard
-              key={index}
-              title={product.name}
-              price={product.price}
-              imageUrl={product.imageUrl}
-              description={product.description}
-            />
-          ))}
+        {productsList
+          .filter(
+            (product: {
+              name: string;
+              description: string;
+              price: number;
+              imageUrl: string;
+            }) => product?.name?.includes(searchInput)
+          )
+          .map(
+            (
+              product: {
+                name: string;
+                description: string;
+                price: number;
+                imageUrl: string;
+              },
+              index
+            ) => (
+              <ProductCard
+                key={index}
+                title={product.name}
+                price={product.price}
+                imageUrl={product.imageUrl}
+                description={product.description}
+              />
+            )
+          )}
       </Box>
     </Box>
   );
