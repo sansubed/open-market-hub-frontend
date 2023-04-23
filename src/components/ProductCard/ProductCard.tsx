@@ -23,11 +23,15 @@ type MyPaperProps = Omit<PaperProps, "classes"> & {
 };
 
 const AnimatedCard = styled(Card)(({ isHovered }: MyPaperProps) => ({
-  maxWidth: 300,
+  width: 280,
+  height: 380,
   borderRadius: 7,
   background: "#0d324d",
   transition: "transform 0.3s",
   transform: isHovered ? "scale(1.05)" : "scale(1)",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
 
   "&:hover": {
     transform: "scale(1.05)",
@@ -57,17 +61,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
         onMouseLeave={handleMouseLeave}
         isHovered={isHovered}
       >
-        <CardMedia sx={{ height: 150 }} image={imageUrl} title="green iguana" />
+        <CardMedia sx={{ height: 250 }} image={imageUrl} />
         <CardContent sx={{ p: 1.5 }}>
-          <Typography gutterBottom variant="h5" component="div" color="#FFF">
+          <Typography gutterBottom variant="h6" component="div" color="#FFF">
             {title}
           </Typography>
           <Typography variant="body2" color="#cfc4c4" py={1}>
             {description}
           </Typography>
 
-          <Typography variant="h5" color="#FFF">
-            {price}
+          <Typography variant="h5" color="#9d3a3a">
+            ${price}
           </Typography>
         </CardContent>
 

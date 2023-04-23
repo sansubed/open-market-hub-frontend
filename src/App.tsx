@@ -8,6 +8,7 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Login from "./components/Login/Login";
 import CreateNewAccount from "./pages/CreateNewAccount/CreateNewAccount";
+import Api from "./pages/Api/Api";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/api" element={<Api />} />
         <Route path="/create-new-account" element={<CreateNewAccount />} />
       </Routes>
       <Footer />

@@ -18,11 +18,12 @@ import {
   faStore,
   faEnvelope,
   faUser,
+  faGear,
 } from "@fortawesome/free-solid-svg-icons";
 
-const pages = ["Home", "Marketplace", "Contact", "Login"];
-const pagesLogos: IconDefinition[] = [faHouse, faStore, faEnvelope, faUser];
-const pagesRoutes = ["/home", "/marketplace", "/contact", "/login"];
+const pages = ["Home", "Marketplace", "Contact", "APIS"];
+const pagesLogos: IconDefinition[] = [faHouse, faStore, faEnvelope, faGear];
+const pagesRoutes = ["/home", "/marketplace", "/contact", "/api"];
 
 //header components
 const Header = () => {

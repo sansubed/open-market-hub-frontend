@@ -9,8 +9,8 @@ const Hero = () => {
         height: "80vh",
         background: `linear-gradient(rgba(160, 32, 240, 0.2),rgba(160, 32, 240, 0.2)), url(${heroImage})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize: { md: "left", lg: "cover" },
-        backgroundPosition: "left",
+        backgroundSize: { md: "right", lg: "cover" },
+        backgroundPosition: "right",
       }}
     >
       <Box
@@ -22,22 +22,24 @@ const Hero = () => {
           gap: "2em",
           alignItems: { md: "center", lg: "flex-end" },
           height: "100%",
+          mr: 10,
         }}
       >
         <Box
           sx={{
             margin: "2%",
+            px: 2,
             display: "flex",
-            justifyContent: "flex-end",
+            justifyContent: "center",
             flexDirection: "column",
-            alignItems: { sm: "center", lg: "flex-end" },
+            alignItems: { xs: "center", lg: "center" },
           }}
         >
           <AnimatedText color="white" text="Open Market Hub" variant="h3" />
           <Typography
             variant="h6"
             color="#d7d2d2"
-            sx={{ maxWidth: "450px", marginY: 4, pl: { lg: 10 } }}
+            sx={{ maxWidth: "450px", marginY: 4, pl: { lg: 2 } }}
           >
             Welcome to the Smart, Safe and Responsive Way to Buy and Sell
             Products Locally!

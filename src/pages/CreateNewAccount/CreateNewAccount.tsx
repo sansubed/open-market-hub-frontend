@@ -11,6 +11,7 @@ import {
   Box,
   Button,
   InputAdornment,
+  Link,
   Paper,
   Stack,
   TextField,
@@ -86,150 +87,186 @@ const CreateNewAccount: React.FC<Props> = ({ style }) => {
   };
 
   return (
-    <div style={style} {...styles.root}>
-      <Typography variant="h4" gutterBottom>
-        Create a New Account
-      </Typography>
-      <Typography variant="body1" mb={3}>
-        Its easy and quick
-      </Typography>
-
-      <form style={style} {...styles.form}>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <div style={style} {...styles.root}>
+        <Typography
+          variant="h4"
+          gutterBottom
+          color="#FFF"
+          textAlign="center"
+          pt={2}
+        >
+          Create a New Account
+        </Typography>
+        <Typography
+          variant="body1"
+          mb={3}
+          color="#FFF"
+          textAlign="center"
+          pt={2}
+        >
+          Its easy and quick
+        </Typography>
         <Box
           sx={{
+            mx: "5%",
             display: "flex",
-            justifyContent: "spaceAround",
-            flexDirection: { xs: "column", md: "row" },
-            gap: 2,
-            width: "100%",
+            justifyContent: "center",
+            maxWidth: "650px",
           }}
         >
-          <TextField
-            placeholder="First Name"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            variant="outlined"
-            name="firstName"
-            style={styles.textField}
-            required
-            fullWidth
-            InputLabelProps={{
-              style: {
-                color: "#FFF",
-              },
-            }}
-            InputProps={{
-              style: {
-                color: "#FFF",
-                border: "2px solid #FFF",
-                borderRadius: "20px",
-                fontSize: "1.3em",
-              },
-              startAdornment: (
-                <InputAdornment position="start">
-                  <FontAwesomeIcon icon={faUser} color="#FFF" size="1x" />
-                </InputAdornment>
-              ),
-            }}
-          />
-          <TextField
-            placeholder="Last Name"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            variant="outlined"
-            style={styles.textField}
-            name="lastName"
-            required
-            fullWidth
-            InputLabelProps={{
-              style: {
-                color: "#FFF",
-              },
-            }}
-            InputProps={{
-              style: {
-                color: "#FFF",
-                border: "2px solid #FFF",
-                borderRadius: "20px",
-                fontSize: "1.3em",
-              },
-              startAdornment: (
-                <InputAdornment position="start">
-                  <FontAwesomeIcon icon={faUserSecret} color="#FFF" size="1x" />
-                </InputAdornment>
-              ),
-            }}
-          />
-        </Box>
+          <form style={style} {...styles.form}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "spaceAround",
+                flexDirection: { xs: "column", md: "row" },
+                gap: 2,
+                width: "100%",
+              }}
+            >
+              <TextField
+                placeholder="First Name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                variant="outlined"
+                name="firstName"
+                style={styles.textField}
+                required
+                fullWidth
+                InputLabelProps={{
+                  style: {
+                    color: "#FFF",
+                  },
+                }}
+                InputProps={{
+                  style: {
+                    color: "#FFF",
+                    border: "2px solid #FFF",
+                    borderRadius: "20px",
+                    fontSize: "1.3em",
+                  },
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <FontAwesomeIcon icon={faUser} color="#FFF" size="1x" />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <TextField
+                placeholder="Last Name"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                variant="outlined"
+                style={styles.textField}
+                name="lastName"
+                required
+                fullWidth
+                InputLabelProps={{
+                  style: {
+                    color: "#FFF",
+                  },
+                }}
+                InputProps={{
+                  style: {
+                    color: "#FFF",
+                    border: "2px solid #FFF",
+                    borderRadius: "20px",
+                    fontSize: "1.3em",
+                  },
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <FontAwesomeIcon icon={faUser} color="#FFF" size="1x" />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </Box>
 
-        <TextField
-          fullWidth
-          placeholder="Email Address"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          name="email"
-          variant="outlined"
-          style={styles.textField}
-          type="email"
-          required
-          InputLabelProps={{
-            style: {
-              color: "#FFF",
-            },
-          }}
-          InputProps={{
-            style: {
-              color: "#FFF",
-              border: "2px solid #FFF",
-              borderRadius: "20px",
-              fontSize: "1.3em",
-            },
-            startAdornment: (
-              <InputAdornment position="start">
-                <FontAwesomeIcon icon={faEnvelope} color="#FFF" size="1x" />
-              </InputAdornment>
-            ),
-          }}
-        />
-        <TextField
-          fullWidth
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          name="password"
-          variant="outlined"
-          style={styles.textField}
-          type="password"
-          required
-          InputLabelProps={{
-            style: {
-              color: "#FFF",
-            },
-          }}
-          InputProps={{
-            style: {
-              color: "#FFF",
-              border: "2px solid #FFF",
-              borderRadius: "20px",
-              fontSize: "1.3em",
-            },
-            startAdornment: (
-              <InputAdornment position="start">
-                <FontAwesomeIcon icon={faLock} color="#FFF" size="1x" />
-              </InputAdornment>
-            ),
-          }}
-        />
-        <Button
-          variant="contained"
-          color="primary"
-          style={styles.button}
-          onClick={handleSubmit}
-        >
-          Create Account
-        </Button>
-      </form>
-    </div>
+            <TextField
+              fullWidth
+              placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              variant="outlined"
+              style={styles.textField}
+              type="email"
+              required
+              InputLabelProps={{
+                style: {
+                  color: "#FFF",
+                },
+              }}
+              InputProps={{
+                style: {
+                  color: "#FFF",
+                  border: "2px solid #FFF",
+                  borderRadius: "20px",
+                  fontSize: "1.3em",
+                },
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <FontAwesomeIcon icon={faEnvelope} color="#FFF" size="1x" />
+                  </InputAdornment>
+                ),
+              }}
+            />
+            <TextField
+              fullWidth
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              variant="outlined"
+              style={styles.textField}
+              type="password"
+              required
+              InputLabelProps={{
+                style: {
+                  color: "#FFF",
+                },
+              }}
+              InputProps={{
+                style: {
+                  color: "#FFF",
+                  border: "2px solid #FFF",
+                  borderRadius: "20px",
+                  fontSize: "1.3em",
+                },
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <FontAwesomeIcon icon={faLock} color="#FFF" size="1x" />
+                  </InputAdornment>
+                ),
+              }}
+            />
+            <Button
+              variant="contained"
+              color="primary"
+              style={styles.button}
+              onClick={handleSubmit}
+              sx={{
+                mb: 3,
+              }}
+            >
+              Create Account
+            </Button>
+            <Typography color="#FFF" mb={2}>
+              Already have an account?{" "}
+              <Link color="inherit" href="/login">
+                Sign In
+              </Link>
+            </Typography>
+          </form>
+        </Box>
+      </div>
+    </Box>
   );
 };
 

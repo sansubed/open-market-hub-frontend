@@ -137,10 +137,10 @@ const Login = () => {
           >
             Login
           </Button>
-          <Typography variant="h6">Do not have account?</Typography>
           <Typography variant="h6">
-            <Link underline="none" href="/create-new-account">
-              Create New Account here{" "}
+            Do not have account?
+            <Link href="/create-new-account" color="inherit">
+              Create New Account here
             </Link>
           </Typography>
         </FormControl>

@@ -1,22 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { Box } from "@mui/system";
-import { Search } from "@mui/icons-material";
 import { InputAdornment, TextField } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const Marketplace = () => {
-  //fetch all product from the api
-  // useEffect(() => {
-  //   const fetchProducts = async () => {
-  //     let response = await fetch("http://103.72.77.61:8080/api/products/");
-  //     let data = await response.json();
-  //     console.log(data);
-  //   };
+interface Product {
+  name: string;
+  price: string;
+  description: string;
+  imageUrl: string;
+}
 
-  //   fetchProducts();
-  // }, []);
+const Marketplace = () => {
+  const [productList, setProductList] = useState([]);
+  const [searchInput, setSearchInput] = useState<string>("");
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      let response = await fetch("http://103.72.77.61:8080/api/products/");
+      let productList = await response.json();
+      setProductList(productList);
+    };
+
+    fetchProducts();
+  }, []);
 
   return (
     <Box
@@ -24,7 +32,9 @@ const Marketplace = () => {
         py: 5,
         display: "flex",
         flexWrap: "wrap",
+        flexDirection: "column",
         justifyContent: "center",
+        alignItems: "center",
       }}
     >
       <Box
@@ -36,12 +46,14 @@ const Marketplace = () => {
           id="search"
           placeholder="What are you looking for?"
           fullWidth
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
           InputProps={{
             style: {
               color: "#fff",
               border: "2px solid #FFF",
               borderRadius: "20px",
-              fontSize: "1.3em",
+              fontSize: "1.1em",
             },
             startAdornment: (
               <InputAdornment position="start">
@@ -62,95 +74,17 @@ const Marketplace = () => {
           gap: 5,
         }}
       >
-        <ProductCard
-          title="Laptop"
-          description="Brand new Surface Book"
-          price="250"
-          imageUrl="https://i5.walmartimages.com/asr/9c14c33b-8c37-4dba-973e-1e9025dcb086.f094e8d5ea04c09214ffd4d91060ff79.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
-        />
-
-        <ProductCard
-          title="Laptop"
-          description="Brand new Surface Book"
-          price="250"
-          imageUrl="https://i5.walmartimages.com/asr/9c14c33b-8c37-4dba-973e-1e9025dcb086.f094e8d5ea04c09214ffd4d91060ff79.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
-        />
-        <ProductCard
-          title="Laptop"
-          description="Brand new Surface Book"
-          price="250"
-          imageUrl="https://i5.walmartimages.com/asr/9c14c33b-8c37-4dba-973e-1e9025dcb086.f094e8d5ea04c09214ffd4d91060ff79.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
-        />
-
-        <ProductCard
-          title="Laptop"
-          description="Brand new Surface Book"
-          price="250"
-          imageUrl="https://i5.walmartimages.com/asr/9c14c33b-8c37-4dba-973e-1e9025dcb086.f094e8d5ea04c09214ffd4d91060ff79.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
-        />
-        <ProductCard
-          title="Laptop"
-          description="Brand new Surface Book"
-          price="250"
-          imageUrl="https://i5.walmartimages.com/asr/9c14c33b-8c37-4dba-973e-1e9025dcb086.f094e8d5ea04c09214ffd4d91060ff79.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
-        />
-
-        <ProductCard
-          title="Laptop"
-          description="Brand new Surface Book"
-          price="250"
-          imageUrl="https://i5.walmartimages.com/asr/9c14c33b-8c37-4dba-973e-1e9025dcb086.f094e8d5ea04c09214ffd4d91060ff79.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
-        />
-
-        <ProductCard
-          title="Laptop"
-          description="Brand new Surface Book"
-          price="250"
-          imageUrl="https://i5.walmartimages.com/asr/9c14c33b-8c37-4dba-973e-1e9025dcb086.f094e8d5ea04c09214ffd4d91060ff79.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
-        />
-
-        <ProductCard
-          title="Laptop"
-          description="Brand new Surface Book"
-          price="250"
-          imageUrl="https://i5.walmartimages.com/asr/9c14c33b-8c37-4dba-973e-1e9025dcb086.f094e8d5ea04c09214ffd4d91060ff79.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
-        />
-        <ProductCard
-          title="Laptop"
-          description="Brand new Surface Book"
-          price="250"
-          imageUrl="https://i5.walmartimages.com/asr/9c14c33b-8c37-4dba-973e-1e9025dcb086.f094e8d5ea04c09214ffd4d91060ff79.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
-        />
-        <ProductCard
-          title="Laptop"
-          description="Brand new Surface Book"
-          price="250"
-          imageUrl="https://i5.walmartimages.com/asr/9c14c33b-8c37-4dba-973e-1e9025dcb086.f094e8d5ea04c09214ffd4d91060ff79.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
-        />
-        <ProductCard
-          title="Laptop"
-          description="Brand new Surface Book"
-          price="250"
-          imageUrl="https://i5.walmartimages.com/asr/9c14c33b-8c37-4dba-973e-1e9025dcb086.f094e8d5ea04c09214ffd4d91060ff79.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
-        />
-        <ProductCard
-          title="Laptop"
-          description="Brand new Surface Book"
-          price="250"
-          imageUrl="https://i5.walmartimages.com/asr/9c14c33b-8c37-4dba-973e-1e9025dcb086.f094e8d5ea04c09214ffd4d91060ff79.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
-        />
-        <ProductCard
-          title="Laptop"
-          description="Brand new Surface Book"
-          price="250"
-          imageUrl="https://i5.walmartimages.com/asr/9c14c33b-8c37-4dba-973e-1e9025dcb086.f094e8d5ea04c09214ffd4d91060ff79.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
-        />
-        <ProductCard
-          title="Laptop"
-          description="Brand new Surface Book"
-          price="250"
-          imageUrl="https://i5.walmartimages.com/asr/9c14c33b-8c37-4dba-973e-1e9025dcb086.f094e8d5ea04c09214ffd4d91060ff79.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
-        />
+        {productList
+          .filter((product: Product) => product?.name?.includes(searchInput))
+          .map((product: Product, index) => (
+            <ProductCard
+              key={index}
+              title={product.name}
+              price={product.price}
+              imageUrl={product.imageUrl}
+              description={product.description}
+            />
+          ))}
       </Box>
     </Box>
   );
