@@ -21,6 +21,7 @@ const HeroTextWrapper = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
+  padding: "0 10px",
 }));
 
 const HeroButton = styled(Button)(({ theme }) => ({
@@ -41,7 +42,7 @@ function Api() {
     <HeroSectionWrapper>
       <HeroTextWrapper>
         <Typography variant="h2" color="#FFF" gutterBottom>
-          OpenMarket Hub APIS
+          OpenMarket Hub APIs
         </Typography>
         <Typography
           variant="subtitle1"
