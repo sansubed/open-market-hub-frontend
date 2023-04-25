@@ -33,7 +33,6 @@ const Hero = () => {
             justifyContent: "center",
             flexDirection: "column",
             alignItems: "center",
-            border: "2px solid white",
           }}
         >
           <AnimatedText color="white" text="Open Market Hub" variant="h3" />
