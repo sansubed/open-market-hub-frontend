@@ -28,7 +28,7 @@ const AnimatedText = ({ color, text, variant }: AnimatedTextOptions) => {
   const characters = text.split("");
 
   return (
-    <Typography variant={variant} align="left" color={color} gutterBottom>
+    <Typography variant={variant} align="center" color={color} gutterBottom>
       {characters.map((char, index) => (
         <motion.span
           key={index}

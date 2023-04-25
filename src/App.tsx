@@ -15,7 +15,6 @@ function App() {
     <Box
       sx={{
         background: "linear-gradient(315deg, #7f5a83 0%, #0d324d 74%)",
-        // "linear-gradient(rgba(45, 55, 72, 0) 0%, rgb(45, 55, 72) 100%), rgb(26, 32, 44)",
       }}
     >
       <Header />

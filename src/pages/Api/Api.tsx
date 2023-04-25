@@ -11,6 +11,7 @@ const HeroSectionWrapper = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  padding: "0 5px",
 }));
 
 const HeroTextWrapper = styled(Box)(({ theme }) => ({

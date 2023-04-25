@@ -42,7 +42,7 @@ const Header = () => {
   return (
     <Box
       sx={{
-        my: "65px",
+        my: "55px",
       }}
     >
       <AppBar

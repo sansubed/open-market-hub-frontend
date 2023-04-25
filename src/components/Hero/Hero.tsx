@@ -22,7 +22,7 @@ const Hero = () => {
           gap: "2em",
           alignItems: { md: "center", lg: "flex-end" },
           height: "100%",
-          mr: 10,
+          mr: { lg: 10 },
         }}
       >
         <Box
@@ -32,7 +32,8 @@ const Hero = () => {
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
-            alignItems: { xs: "center", lg: "center" },
+            alignItems: "center",
+            border: "2px solid white",
           }}
         >
           <AnimatedText color="white" text="Open Market Hub" variant="h3" />
@@ -40,6 +41,7 @@ const Hero = () => {
             variant="h6"
             color="#d7d2d2"
             sx={{ maxWidth: "450px", marginY: 4, pl: { lg: 2 } }}
+            textAlign="center"
           >
             Welcome to the Smart, Safe and Responsive Way to Buy and Sell
             Products Locally!
