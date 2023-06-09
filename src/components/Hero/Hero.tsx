@@ -64,7 +64,7 @@ const Hero = () => {
                 py: 1,
               }}
             >
-              Market Place
+              MarketPlace
             </Button>
             <Button
               href="/create-new-account"
